@@ -29,9 +29,12 @@
                                     <constraint firstAttribute="height" constant="30" id="hhg-n6-JVP"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
+                                    <segment title="Timer"/>
+                                    <segment title="StopWatch"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="9TO-VT-Kog"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dhm-GW-XVO">
                                 <rect key="frame" x="76" y="198" width="223" height="85"/>
@@ -61,6 +64,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="stop.circle.fill" catalog="system" title="">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="45"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="resetAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ueA-QA-f29"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xpi-sO-Zx1">
                                         <rect key="frame" x="116.5" y="0.0" width="91.5" height="56"/>
@@ -72,6 +78,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="pause.circle.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="45"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="stopAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KgQ-lc-HDS"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KsF-T7-Bb6">
                                         <rect key="frame" x="233" y="0.0" width="70" height="56"/>
@@ -83,6 +92,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="play.circle.fill" catalog="system">
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="45"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="startAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Oi-gb-1t9"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -112,6 +124,14 @@
                             <constraint firstItem="vHe-wo-pEe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yU1-X9-0w2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="pickerView" destination="vHe-wo-pEe" id="day-mW-IYj"/>
+                        <outlet property="resetButton" destination="oHQ-hv-h43" id="tqN-1g-1ms"/>
+                        <outlet property="segmentControl" destination="iKa-6o-6Xz" id="165-hh-S8H"/>
+                        <outlet property="startButton" destination="KsF-T7-Bb6" id="kI0-ol-7Zv"/>
+                        <outlet property="stopButton" destination="xpi-sO-Zx1" id="LGp-Rt-eDn"/>
+                        <outlet property="timeLabel" destination="dhm-GW-XVO" id="4de-DM-x5L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
